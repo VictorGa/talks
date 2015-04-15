@@ -1,0 +1,330 @@
+/*
+ * CSS Prefixed Property
+ * @param {string} $property - CSS Property
+ * @param {string} $value - Value
+ */
+@mixin css3($property, $value) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}#{$property}: $value;
+	}
+}
+
+// Background Group
+
+/*
+ * Background Clip Prefixed
+ * @param {string} $type - border-box | padding-box | content-box
+ */
+@mixin bg-clip ($type: border-box) {
+	-webkit-background-clip: $type;
+	background-clip: $type;
+}
+
+/*
+ * Background Size Prefixed
+ * @param {string} $value - background size value
+ */
+@mixin bg-size ($value) {
+	-webkit-background-size: $value;
+	background-size: $value;
+}
+
+
+// Box Group
+
+/*
+ * Box sizing Prefixed
+ * @param {string} $type - content-box | border-box | inherit
+ */
+@mixin box-sizing ($type: border-box) {
+	@include css3(box-sizing, $type);
+}
+
+/*
+ * Box shadow Prefixed
+ * @param {string} $value - Box shadow value
+ */
+@mixin box-shadow($value) {
+	@include css3(box-shadow, $value);
+}
+
+
+// Border Group
+
+/*
+ * Border Image Prefixed
+ * @param {string} $source (none) - Border image source
+ * @param {string} $values (30 30 repeat) - Border image options
+ */
+@mixin border-image ($source: none, $values: 30 30 repeat) { // ( source | slice | width | outset | repeat )
+	@include css3(border-image, url('#{$source}') $values);
+}
+
+/*
+ * Border radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-radius($radius) {
+	@include css3(border-radius, $radius);
+}
+
+/*
+ * Border Top Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-top-left-radius($radius) {
+	-webkit-border-top-left-radius: $radius;
+	-moz-border-radius-topleft: $radius;
+	border-top-left-radius: $radius;
+}
+
+/*
+ * Border Top Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-top-right-radius($radius) {
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-radius-topright: $radius;
+	border-top-right-radius: $radius;
+}
+
+/*
+ * Border Bottom Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-bottom-right-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-radius-bottomright: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+/*
+ * Border Bottom Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-bottom-left-radius($radius) {
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-radius-bottomleft: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+/*
+ * Border Top Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-top-radius($radius) {
+	@include border-top-right-radius($radius);
+	@include border-top-left-radius($radius);
+}
+
+/*
+ * Border Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-right-radius($radius) {
+	@include border-top-right-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+
+/*
+ * Border Bottom Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-bottom-radius($radius) {
+	@include border-bottom-right-radius($radius);
+	@include border-bottom-left-radius($radius);
+}
+
+/*
+ * Border Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+@mixin border-left-radius($radius) {
+	@include border-top-left-radius($radius);
+	@include border-bottom-left-radius($radius);
+}
+
+
+// Transform Group
+
+/*
+ * Transform Prefixed
+ * @param {string} $params - Transform Params
+ */
+@mixin transform($params) {
+	@include css3(transform, $params);
+}
+
+/*
+ * Rotate Prefixed
+ * @param {number} $deg - Rotation degrees
+ */
+@mixin rotate($deg: 0) {
+	@include css3(transform, rotate($deg + deg));
+}
+
+
+/*
+ * Keyframes Prefixed
+ * @param {string} $name - Name of the keyframes animation
+ */
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+/*
+ * Matrix Prefixed
+ * @param {number} $rotate - Rotation Degrees
+ * @param {number} $scale - Scale Value
+ * @param {number} $translate - Translate Value
+ * @param {number} $skew - Skew Degrees
+ * @param {number} $x - X Position
+ * @param {number} $y - Y Position
+ */
+@mixin matrix ($rotate: 0.86, $scale: 0.5, $translate: -0.5, $skew: 0.86, $x: 0, $y: 0) {
+	@include css3(transform, matrix($rotate, $scale, $translate, $skew, $x, $y));
+
+	filter: "progid:DXImageTransform.Microsoft.Matrix(M11='#{$rotate}', M12='#{$scale}', M21='#{$translate}', M22='#{$skew}', sizingMethod='auto expand')";
+}
+
+/*
+ * Matrix3d Prefixed
+ * @param {string} $values - Matrix 3D value
+ */
+@mixin matrix3d ($values: "1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1") {
+	@include css3(transform, matrix3d(unquote($values)));
+}
+
+/*
+ * Transition Prefixed
+ * @param {string} $what (all) - Transition Property
+ * @param {string} $length (1s) - Transition Duration
+ * @param {string} $easing (ease-in-out) - Transition Easing
+ */
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+	@include css3(transition, $what $length $easing);
+}
+
+/*
+ * Animation Prefixed
+ * @param {string} $params - Animation Property
+ * @param {string} $length (1s) - Transition Duration
+ * @param {string} $easing (ease-in-out) - Transition Easing
+ */
+@mixin animation($params) {
+	@include css3(animation, $params);
+}
+
+
+// Gradients
+
+/*
+ * Gradient X Prefixed
+ * @param {color} $startColor - Gradient start color
+ * @param {color} $endColor - Gradient end color
+ */
+@mixin gradient-x ($startColor: #eee, $endColor: #fff) {
+	background-color: mix($startColor, $endColor);
+	background-image: -webkit-gradient(linear, left center, right center, from($startColor),to($endColor));
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+	background-image: -moz-linear-gradient(left, $startColor, $endColor);
+	background-image: -o-linear-gradient(left, $startColor, $endColor);
+	background-image: -ms-linear-gradient(left, $startColor, $endColor);
+	background-image: linear-gradient(left, $startColor, $endColor);
+	filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='" + ($startColor) + "', EndColorStr='" + ($endColor) + "')";
+}
+
+/*
+ * Gradient Y Prefixed
+ * @param {color} $startColor - Gradient start color
+ * @param {color} $endColor - Gradient end color
+ */
+@mixin gradient-y ($startColor: #eee, $endColor: #fff) {
+	background-color: mix($startColor, $endColor);
+	background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+	background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+	background-image: -moz-linear-gradient(top, $startColor, $endColor);
+	background-image: -o-linear-gradient(top, $startColor, $endColor);
+	background-image: -ms-linear-gradient(top, $startColor, $endColor);
+	background-image: linear-gradient(top, $startColor, $endColor);
+	filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='" + ($startColor) + "', EndColorStr='" + ($endColor) + "')";
+}
+
+/*
+ * Gradient Radial Prefixed
+ * @param {color} $innerColor - Gradient inner color
+ * @param {color} outerColor - Gradient outer color
+ */
+@mixin gradient-radial($innerColor: #555, $outerColor: #333) {
+	background-color: mix($innerColor, $outerColor);
+	background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor));
+	background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor);
+	background-image: -moz-radial-gradient(circle, $innerColor, $outerColor);
+	background-image: radial-gradient(circle, $innerColor, $outerColor);
+	background-repeat: no-repeat;
+}
+
+
+// Other
+
+/*
+ * Opacity Prefixed
+ * @param {number} $opacity (0.5) - Opacity value
+ */
+@mixin opacity($opacity: 0.5) {
+	filter: alpha(opacity=($opacity * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}
+
+/*
+ * No User select
+ */
+@mixin no-select {
+	-webkit-touch-callout: none;
+	@include css3(user-select, none);
+}
+
+/*
+ * Pointer Events Prefixed
+ * @param {string} $value (none) - Pointer events Value
+ */
+@mixin pointer-events($value: none){
+	-webkit-pointer-events: $value;
+	-moz-pointer-events: $value;
+	pointer-events: $value;
+}
+
+/*
+ * Font Face
+ * @param {string} $fontName - Name of the font
+ * @param {string} $folderName - Subfolder inside the fonts folder
+ * @param {string} $fileName - Name of the font-file
+ * @param {string} $fontWeight (normal) - Font weight value
+ * @param {string} $fontStyle (normal) - Font style value
+ */
+@mixin font-face($fontName, $folderName, $fileName, $fontWeight: normal, $fontStyle: normal){
+	@font-face {
+		font-family: $fontName;
+		src: url('#{$pathFont}#{$folderName}/#{$fileName}.eot');
+		src: url('#{$pathFont}#{$folderName}/#{$fileName}.eot?#iefix') format('embedded-opentype'),
+		url('#{$pathFont}#{$folderName}/#{$fileName}.woff') format('woff'),
+		url('#{$pathFont}#{$folderName}/#{$fileName}.ttf') format('truetype'),
+		url('#{$pathFont}#{$folderName}/#{$fileName}.svg##{$fontName}') format('svg');
+		font-weight: $fontWeight;
+		font-style: $fontStyle;
+	}
+}

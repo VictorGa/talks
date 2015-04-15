@@ -1,0 +1,75 @@
+$spWidth: 1920;
+$spHeight: 1680;
+$frameSizeW: 320;
+$frameSizeH: 240;
+$fps: 24;
+
+$cols: round($spWidth/$frameSizeW);
+$rows: round($spHeight/$frameSizeH);
+$time: ((1000/$fps)*$cols)/1000;
+$frameSizeWPerc: 100/($cols - 1);
+$frameSizeHPerc: 100/($rows - 1);
+
+@mixin setInkAnimation() {
+	$class: "animation-frames-";
+	@for $i from 0 through $rows {
+		&.#{$class}#{$i} {
+			visibility: visible;
+			@include animation(#{play}#{$i} $time * 1s steps($cols - 1) (0s));
+			@if $i == $rows - 1 {
+				@include css3(animation-play-state, paused);
+			}
+		}
+	}
+}
+
+@mixin setInkAnimationReversed() {
+	$class: "animation-frames-reverse-";
+	@for $i from 0 through $rows {
+		&.#{$class}#{$i} {
+			visibility: visible;
+			@include animation(#{play-reverse}#{$i} $time * 1s steps($cols - 1) (0s));
+		}
+	}
+}
+
+@mixin setInkAnimationDef() {
+	@for $i from 0 through $rows {
+		@include keyframes(#{play}#{$i}) {
+			from {
+				@include css3(mask-position, 0% $frameSizeHPerc * ($i) * 1%);
+			}
+			to {
+				@include css3(mask-position, 100% $frameSizeHPerc * ($i) * 1%);
+			}
+		}
+	}
+}
+
+@mixin setInkAnimationDefReversed() {
+	@for $i from $rows through 0 {
+		@include keyframes(#{play-reverse}#{$i}) {
+			from {
+				@include css3(mask-position, 100% $frameSizeHPerc * ($i) * 1%);
+			}
+			to {
+				@include css3(mask-position, 0% $frameSizeHPerc * ($i) * 1%);
+			}
+		}
+	}
+}
+
+
+.masked-content {
+	@include css3(mask, url('../img/mask.png') no-repeat center center);
+	@include css3(mask-size, $cols*100% $rows*100%);
+	@include css3(mask-position, 0% 0%);
+
+	@include setInkAnimation();
+	@include setInkAnimationReversed();
+}
+
+//Set keyframe animations
+@include setInkAnimationDef();
+@include setInkAnimationDefReversed();
+

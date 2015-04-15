@@ -1,0 +1,17 @@
+/*
+ * Size an Element
+ * @param {number} $width (1em) - Width of the element
+ * @param {number} $height ($width) - Height of the element
+ */
+@mixin size($width: 1em, $height: $width) {
+	height: $height;
+	width: $width;
+}
+
+/*
+ * Square Size an Element
+ * @param {number} $size (5px) - Width and Height of the Element
+ */
+@mixin square($size: 5px) {
+	@include size($size, $size);
+}

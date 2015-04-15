@@ -1,0 +1,1158 @@
+/*
+ * CSS Prefixed Property
+ * @param {string} $property - CSS Property
+ * @param {string} $value - Value
+ */
+/*
+ * Background Clip Prefixed
+ * @param {string} $type - border-box | padding-box | content-box
+ */
+/*
+ * Background Size Prefixed
+ * @param {string} $value - background size value
+ */
+/*
+ * Box sizing Prefixed
+ * @param {string} $type - content-box | border-box | inherit
+ */
+/*
+ * Box shadow Prefixed
+ * @param {string} $value - Box shadow value
+ */
+/*
+ * Border Image Prefixed
+ * @param {string} $source (none) - Border image source
+ * @param {string} $values (30 30 repeat) - Border image options
+ */
+/*
+ * Border radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Top Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Top Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Bottom Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Bottom Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Top Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Right Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Bottom Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Border Left Radius Prefixed
+ * @param {string} $radius - Border radius value
+ */
+/*
+ * Transform Prefixed
+ * @param {string} $params - Transform Params
+ */
+/*
+ * Rotate Prefixed
+ * @param {number} $deg - Rotation degrees
+ */
+/*
+ * Keyframes Prefixed
+ * @param {string} $name - Name of the keyframes animation
+ */
+/*
+ * Matrix Prefixed
+ * @param {number} $rotate - Rotation Degrees
+ * @param {number} $scale - Scale Value
+ * @param {number} $translate - Translate Value
+ * @param {number} $skew - Skew Degrees
+ * @param {number} $x - X Position
+ * @param {number} $y - Y Position
+ */
+/*
+ * Matrix3d Prefixed
+ * @param {string} $values - Matrix 3D value
+ */
+/*
+ * Transition Prefixed
+ * @param {string} $what (all) - Transition Property
+ * @param {string} $length (1s) - Transition Duration
+ * @param {string} $easing (ease-in-out) - Transition Easing
+ */
+/*
+ * Animation Prefixed
+ * @param {string} $params - Animation Property
+ * @param {string} $length (1s) - Transition Duration
+ * @param {string} $easing (ease-in-out) - Transition Easing
+ */
+/*
+ * Gradient X Prefixed
+ * @param {color} $startColor - Gradient start color
+ * @param {color} $endColor - Gradient end color
+ */
+/*
+ * Gradient Y Prefixed
+ * @param {color} $startColor - Gradient start color
+ * @param {color} $endColor - Gradient end color
+ */
+/*
+ * Gradient Radial Prefixed
+ * @param {color} $innerColor - Gradient inner color
+ * @param {color} outerColor - Gradient outer color
+ */
+/*
+ * Opacity Prefixed
+ * @param {number} $opacity (0.5) - Opacity value
+ */
+/*
+ * No User select
+ */
+/*
+ * Pointer Events Prefixed
+ * @param {string} $value (none) - Pointer events Value
+ */
+/*
+ * Font Face
+ * @param {string} $fontName - Name of the font
+ * @param {string} $folderName - Subfolder inside the fonts folder
+ * @param {string} $fileName - Name of the font-file
+ * @param {string} $fontWeight (normal) - Font weight value
+ * @param {string} $fontStyle (normal) - Font style value
+ */
+/*
+ * Position X,Y,Z (Fallback Top, Left IE)
+ * @param {number} $x - X Position
+ * @param {number} $y - Y Position
+ * @param {number} $z - Z Position
+ */
+/*
+ * Position
+ * @param {number} $top (0) - Top Position
+ * @param {number} $right (auto) - Right Position
+ * @param {number} $bottom (auto) - Bottom Position
+ * @param {number} $left (0) - Left Position
+ */
+/*
+ * Offset
+ * @param {number} $top (0) - Top Offset
+ * @param {number} $left (0) - Left Offset
+ */
+/*
+ * Positioning an element absolute in the center
+ * @param {number} $width - Width of the element
+ * @param {number} $height - Height of the element
+ */
+/*
+ * Set an element to display block and center margin
+ */
+/*
+ * Size an Element
+ * @param {number} $width (1em) - Width of the element
+ * @param {number} $height ($width) - Height of the element
+ */
+/*
+ * Square Size an Element
+ * @param {number} $size (5px) - Width and Height of the Element
+ */
+/*
+ * Background
+ * @param {string} $name ($spriteDefault) - Image name
+ * @param {string} $repeat (no-repeat) - Image repeat
+ * @param {string} $left (0) - Background-position x
+ * @param {string} $top (0) - Background-position y
+ * @param {string} $color (transparent) - Background color
+ * @param {string} $attachment (scroll) - Background attachment
+ */
+/*
+ * Input Placeholder color
+ * @param {string} $color - Text color
+ */
+/*
+ * Text overflow, Requires inline-block or block for proper styling
+ */
+/*
+ * Disable the use of Ligatures in browsers
+ */
+/*
+ * Animate reset
+ */
+.masked-content {
+  -webkit-mask: url("../img/mask.png") no-repeat center center;
+  -moz-mask: url("../img/mask.png") no-repeat center center;
+  -ms-mask: url("../img/mask.png") no-repeat center center;
+  -o-mask: url("../img/mask.png") no-repeat center center;
+  mask: url("../img/mask.png") no-repeat center center;
+  -webkit-mask-size: 600% 700%;
+  -moz-mask-size: 600% 700%;
+  -ms-mask-size: 600% 700%;
+  -o-mask-size: 600% 700%;
+  mask-size: 600% 700%;
+  -webkit-mask-position: 0% 0%;
+  -moz-mask-position: 0% 0%;
+  -ms-mask-position: 0% 0%;
+  -o-mask-position: 0% 0%;
+  mask-position: 0% 0%; }
+  .masked-content.animation-frames-0 {
+    visibility: visible;
+    -webkit-animation: play0 0.25s steps(5) 0s;
+    -moz-animation: play0 0.25s steps(5) 0s;
+    -ms-animation: play0 0.25s steps(5) 0s;
+    -o-animation: play0 0.25s steps(5) 0s;
+    animation: play0 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-1 {
+    visibility: visible;
+    -webkit-animation: play1 0.25s steps(5) 0s;
+    -moz-animation: play1 0.25s steps(5) 0s;
+    -ms-animation: play1 0.25s steps(5) 0s;
+    -o-animation: play1 0.25s steps(5) 0s;
+    animation: play1 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-2 {
+    visibility: visible;
+    -webkit-animation: play2 0.25s steps(5) 0s;
+    -moz-animation: play2 0.25s steps(5) 0s;
+    -ms-animation: play2 0.25s steps(5) 0s;
+    -o-animation: play2 0.25s steps(5) 0s;
+    animation: play2 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-3 {
+    visibility: visible;
+    -webkit-animation: play3 0.25s steps(5) 0s;
+    -moz-animation: play3 0.25s steps(5) 0s;
+    -ms-animation: play3 0.25s steps(5) 0s;
+    -o-animation: play3 0.25s steps(5) 0s;
+    animation: play3 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-4 {
+    visibility: visible;
+    -webkit-animation: play4 0.25s steps(5) 0s;
+    -moz-animation: play4 0.25s steps(5) 0s;
+    -ms-animation: play4 0.25s steps(5) 0s;
+    -o-animation: play4 0.25s steps(5) 0s;
+    animation: play4 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-5 {
+    visibility: visible;
+    -webkit-animation: play5 0.25s steps(5) 0s;
+    -moz-animation: play5 0.25s steps(5) 0s;
+    -ms-animation: play5 0.25s steps(5) 0s;
+    -o-animation: play5 0.25s steps(5) 0s;
+    animation: play5 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-6 {
+    visibility: visible;
+    -webkit-animation: play6 0.25s steps(5) 0s;
+    -moz-animation: play6 0.25s steps(5) 0s;
+    -ms-animation: play6 0.25s steps(5) 0s;
+    -o-animation: play6 0.25s steps(5) 0s;
+    animation: play6 0.25s steps(5) 0s;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused; }
+  .masked-content.animation-frames-7 {
+    visibility: visible;
+    -webkit-animation: play7 0.25s steps(5) 0s;
+    -moz-animation: play7 0.25s steps(5) 0s;
+    -ms-animation: play7 0.25s steps(5) 0s;
+    -o-animation: play7 0.25s steps(5) 0s;
+    animation: play7 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-0 {
+    visibility: visible;
+    -webkit-animation: play-reverse0 0.25s steps(5) 0s;
+    -moz-animation: play-reverse0 0.25s steps(5) 0s;
+    -ms-animation: play-reverse0 0.25s steps(5) 0s;
+    -o-animation: play-reverse0 0.25s steps(5) 0s;
+    animation: play-reverse0 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-1 {
+    visibility: visible;
+    -webkit-animation: play-reverse1 0.25s steps(5) 0s;
+    -moz-animation: play-reverse1 0.25s steps(5) 0s;
+    -ms-animation: play-reverse1 0.25s steps(5) 0s;
+    -o-animation: play-reverse1 0.25s steps(5) 0s;
+    animation: play-reverse1 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-2 {
+    visibility: visible;
+    -webkit-animation: play-reverse2 0.25s steps(5) 0s;
+    -moz-animation: play-reverse2 0.25s steps(5) 0s;
+    -ms-animation: play-reverse2 0.25s steps(5) 0s;
+    -o-animation: play-reverse2 0.25s steps(5) 0s;
+    animation: play-reverse2 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-3 {
+    visibility: visible;
+    -webkit-animation: play-reverse3 0.25s steps(5) 0s;
+    -moz-animation: play-reverse3 0.25s steps(5) 0s;
+    -ms-animation: play-reverse3 0.25s steps(5) 0s;
+    -o-animation: play-reverse3 0.25s steps(5) 0s;
+    animation: play-reverse3 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-4 {
+    visibility: visible;
+    -webkit-animation: play-reverse4 0.25s steps(5) 0s;
+    -moz-animation: play-reverse4 0.25s steps(5) 0s;
+    -ms-animation: play-reverse4 0.25s steps(5) 0s;
+    -o-animation: play-reverse4 0.25s steps(5) 0s;
+    animation: play-reverse4 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-5 {
+    visibility: visible;
+    -webkit-animation: play-reverse5 0.25s steps(5) 0s;
+    -moz-animation: play-reverse5 0.25s steps(5) 0s;
+    -ms-animation: play-reverse5 0.25s steps(5) 0s;
+    -o-animation: play-reverse5 0.25s steps(5) 0s;
+    animation: play-reverse5 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-6 {
+    visibility: visible;
+    -webkit-animation: play-reverse6 0.25s steps(5) 0s;
+    -moz-animation: play-reverse6 0.25s steps(5) 0s;
+    -ms-animation: play-reverse6 0.25s steps(5) 0s;
+    -o-animation: play-reverse6 0.25s steps(5) 0s;
+    animation: play-reverse6 0.25s steps(5) 0s; }
+  .masked-content.animation-frames-reverse-7 {
+    visibility: visible;
+    -webkit-animation: play-reverse7 0.25s steps(5) 0s;
+    -moz-animation: play-reverse7 0.25s steps(5) 0s;
+    -ms-animation: play-reverse7 0.25s steps(5) 0s;
+    -o-animation: play-reverse7 0.25s steps(5) 0s;
+    animation: play-reverse7 0.25s steps(5) 0s; }
+
+@-webkit-keyframes play0 {
+  from {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; }
+  to {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; } }
+@-moz-keyframes play0 {
+  from {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; }
+  to {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; } }
+@-ms-keyframes play0 {
+  from {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; }
+  to {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; } }
+@keyframes play0 {
+  from {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; }
+  to {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; } }
+@-webkit-keyframes play1 {
+  from {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; }
+  to {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; } }
+@-moz-keyframes play1 {
+  from {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; }
+  to {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; } }
+@-ms-keyframes play1 {
+  from {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; }
+  to {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; } }
+@keyframes play1 {
+  from {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; }
+  to {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; } }
+@-webkit-keyframes play2 {
+  from {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; }
+  to {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; } }
+@-moz-keyframes play2 {
+  from {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; }
+  to {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; } }
+@-ms-keyframes play2 {
+  from {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; }
+  to {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; } }
+@keyframes play2 {
+  from {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; }
+  to {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; } }
+@-webkit-keyframes play3 {
+  from {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; }
+  to {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; } }
+@-moz-keyframes play3 {
+  from {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; }
+  to {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; } }
+@-ms-keyframes play3 {
+  from {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; }
+  to {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; } }
+@keyframes play3 {
+  from {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; }
+  to {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; } }
+@-webkit-keyframes play4 {
+  from {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; }
+  to {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; } }
+@-moz-keyframes play4 {
+  from {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; }
+  to {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; } }
+@-ms-keyframes play4 {
+  from {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; }
+  to {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; } }
+@keyframes play4 {
+  from {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; }
+  to {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; } }
+@-webkit-keyframes play5 {
+  from {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; }
+  to {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; } }
+@-moz-keyframes play5 {
+  from {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; }
+  to {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; } }
+@-ms-keyframes play5 {
+  from {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; }
+  to {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; } }
+@keyframes play5 {
+  from {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; }
+  to {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; } }
+@-webkit-keyframes play6 {
+  from {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; }
+  to {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; } }
+@-moz-keyframes play6 {
+  from {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; }
+  to {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; } }
+@-ms-keyframes play6 {
+  from {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; }
+  to {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; } }
+@keyframes play6 {
+  from {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; }
+  to {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; } }
+@-webkit-keyframes play7 {
+  from {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; }
+  to {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; } }
+@-moz-keyframes play7 {
+  from {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; }
+  to {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; } }
+@-ms-keyframes play7 {
+  from {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; }
+  to {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; } }
+@keyframes play7 {
+  from {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; }
+  to {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; } }
+@-webkit-keyframes play-reverse7 {
+  from {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; }
+  to {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; } }
+@-moz-keyframes play-reverse7 {
+  from {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; }
+  to {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; } }
+@-ms-keyframes play-reverse7 {
+  from {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; }
+  to {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; } }
+@keyframes play-reverse7 {
+  from {
+    -webkit-mask-position: 100% 116.66667%;
+    -moz-mask-position: 100% 116.66667%;
+    -ms-mask-position: 100% 116.66667%;
+    -o-mask-position: 100% 116.66667%;
+    mask-position: 100% 116.66667%; }
+  to {
+    -webkit-mask-position: 0% 116.66667%;
+    -moz-mask-position: 0% 116.66667%;
+    -ms-mask-position: 0% 116.66667%;
+    -o-mask-position: 0% 116.66667%;
+    mask-position: 0% 116.66667%; } }
+@-webkit-keyframes play-reverse6 {
+  from {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; }
+  to {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; } }
+@-moz-keyframes play-reverse6 {
+  from {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; }
+  to {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; } }
+@-ms-keyframes play-reverse6 {
+  from {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; }
+  to {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; } }
+@keyframes play-reverse6 {
+  from {
+    -webkit-mask-position: 100% 100%;
+    -moz-mask-position: 100% 100%;
+    -ms-mask-position: 100% 100%;
+    -o-mask-position: 100% 100%;
+    mask-position: 100% 100%; }
+  to {
+    -webkit-mask-position: 0% 100%;
+    -moz-mask-position: 0% 100%;
+    -ms-mask-position: 0% 100%;
+    -o-mask-position: 0% 100%;
+    mask-position: 0% 100%; } }
+@-webkit-keyframes play-reverse5 {
+  from {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; }
+  to {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; } }
+@-moz-keyframes play-reverse5 {
+  from {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; }
+  to {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; } }
+@-ms-keyframes play-reverse5 {
+  from {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; }
+  to {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; } }
+@keyframes play-reverse5 {
+  from {
+    -webkit-mask-position: 100% 83.33333%;
+    -moz-mask-position: 100% 83.33333%;
+    -ms-mask-position: 100% 83.33333%;
+    -o-mask-position: 100% 83.33333%;
+    mask-position: 100% 83.33333%; }
+  to {
+    -webkit-mask-position: 0% 83.33333%;
+    -moz-mask-position: 0% 83.33333%;
+    -ms-mask-position: 0% 83.33333%;
+    -o-mask-position: 0% 83.33333%;
+    mask-position: 0% 83.33333%; } }
+@-webkit-keyframes play-reverse4 {
+  from {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; }
+  to {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; } }
+@-moz-keyframes play-reverse4 {
+  from {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; }
+  to {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; } }
+@-ms-keyframes play-reverse4 {
+  from {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; }
+  to {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; } }
+@keyframes play-reverse4 {
+  from {
+    -webkit-mask-position: 100% 66.66667%;
+    -moz-mask-position: 100% 66.66667%;
+    -ms-mask-position: 100% 66.66667%;
+    -o-mask-position: 100% 66.66667%;
+    mask-position: 100% 66.66667%; }
+  to {
+    -webkit-mask-position: 0% 66.66667%;
+    -moz-mask-position: 0% 66.66667%;
+    -ms-mask-position: 0% 66.66667%;
+    -o-mask-position: 0% 66.66667%;
+    mask-position: 0% 66.66667%; } }
+@-webkit-keyframes play-reverse3 {
+  from {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; }
+  to {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; } }
+@-moz-keyframes play-reverse3 {
+  from {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; }
+  to {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; } }
+@-ms-keyframes play-reverse3 {
+  from {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; }
+  to {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; } }
+@keyframes play-reverse3 {
+  from {
+    -webkit-mask-position: 100% 50%;
+    -moz-mask-position: 100% 50%;
+    -ms-mask-position: 100% 50%;
+    -o-mask-position: 100% 50%;
+    mask-position: 100% 50%; }
+  to {
+    -webkit-mask-position: 0% 50%;
+    -moz-mask-position: 0% 50%;
+    -ms-mask-position: 0% 50%;
+    -o-mask-position: 0% 50%;
+    mask-position: 0% 50%; } }
+@-webkit-keyframes play-reverse2 {
+  from {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; }
+  to {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; } }
+@-moz-keyframes play-reverse2 {
+  from {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; }
+  to {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; } }
+@-ms-keyframes play-reverse2 {
+  from {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; }
+  to {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; } }
+@keyframes play-reverse2 {
+  from {
+    -webkit-mask-position: 100% 33.33333%;
+    -moz-mask-position: 100% 33.33333%;
+    -ms-mask-position: 100% 33.33333%;
+    -o-mask-position: 100% 33.33333%;
+    mask-position: 100% 33.33333%; }
+  to {
+    -webkit-mask-position: 0% 33.33333%;
+    -moz-mask-position: 0% 33.33333%;
+    -ms-mask-position: 0% 33.33333%;
+    -o-mask-position: 0% 33.33333%;
+    mask-position: 0% 33.33333%; } }
+@-webkit-keyframes play-reverse1 {
+  from {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; }
+  to {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; } }
+@-moz-keyframes play-reverse1 {
+  from {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; }
+  to {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; } }
+@-ms-keyframes play-reverse1 {
+  from {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; }
+  to {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; } }
+@keyframes play-reverse1 {
+  from {
+    -webkit-mask-position: 100% 16.66667%;
+    -moz-mask-position: 100% 16.66667%;
+    -ms-mask-position: 100% 16.66667%;
+    -o-mask-position: 100% 16.66667%;
+    mask-position: 100% 16.66667%; }
+  to {
+    -webkit-mask-position: 0% 16.66667%;
+    -moz-mask-position: 0% 16.66667%;
+    -ms-mask-position: 0% 16.66667%;
+    -o-mask-position: 0% 16.66667%;
+    mask-position: 0% 16.66667%; } }
+@-webkit-keyframes play-reverse0 {
+  from {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; }
+  to {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; } }
+@-moz-keyframes play-reverse0 {
+  from {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; }
+  to {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; } }
+@-ms-keyframes play-reverse0 {
+  from {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; }
+  to {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; } }
+@keyframes play-reverse0 {
+  from {
+    -webkit-mask-position: 100% 0%;
+    -moz-mask-position: 100% 0%;
+    -ms-mask-position: 100% 0%;
+    -o-mask-position: 100% 0%;
+    mask-position: 100% 0%; }
+  to {
+    -webkit-mask-position: 0% 0%;
+    -moz-mask-position: 0% 0%;
+    -ms-mask-position: 0% 0%;
+    -o-mask-position: 0% 0%;
+    mask-position: 0% 0%; } }
+
+/*# sourceMappingURL=screen.css.map */

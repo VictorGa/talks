@@ -1,0 +1,51 @@
+/*
+ * Background
+ * @param {string} $name ($spriteDefault) - Image name
+ * @param {string} $repeat (no-repeat) - Image repeat
+ * @param {string} $left (0) - Background-position x
+ * @param {string} $top (0) - Background-position y
+ * @param {string} $color (transparent) - Background color
+ * @param {string} $attachment (scroll) - Background attachment
+ */
+@mixin background($name: $spriteDefault, $repeat: no-repeat, $left: 0, $top: 0, $color: transparent, $attachment: scroll){
+	background: $color url('#{$pathImage}#{$name}') $repeat $left $top $attachment;
+}
+
+/*
+ * Input Placeholder color
+ * @param {string} $color - Text color
+ */
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; }
+	&:-ms-placeholder { color: $color; }
+	&:-o-placeholder { color: $color; }
+	&:placeholder { color: $color; }
+}
+
+/*
+ * Text overflow, Requires inline-block or block for proper styling
+ */
+@mixin text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*
+ * Disable the use of Ligatures in browsers
+ */
+@mixin no-ligatures {
+	-webkit-font-variant-ligatures: no-common-ligatures;
+	@include css3(font-feature-settings, "liga" 0);
+}
+
+/*
+ * Animate reset
+ */
+@mixin animate-reset() {
+	@include css3(backface-visibility, hidden);
+	@include css3(transform, translateZ(0) translate3d(0, 0, 0));
+	@include css3(perspective, 1000);
+	@include css3(transform-style, preserve-3d);
+}
