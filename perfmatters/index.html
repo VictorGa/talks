@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Flow</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section>
+			<h1>Flow</h1>
+			<h3>General performance's lessons learnt</h3>
+			<p>
+				<a href="http://www.victorga.com" target="_blank">Victor Garrido</a>/<a href="https://twitter.com/vic_garrido">@vic_garrido</a> <br> Frontend Engineer <a href="http://www.mediamonks.com" target="_blank">@Mediamonks</a>
+			</p>
+		</section>
+		<section>
+			<h1>What's Flow?</h1>
+		</section>
+		<section>
+			<section class="quote" data-background="#ffffff">
+				<h1>&#8220;A rapper's ability to rhyme to phat beats in a <strong>skillful</strong> manner&#8221;</h1>
+				<p>Urban Dictionary</p>
+			</section>
+
+			<section class="quote" data-background="#ffffff">
+				<h1>&#8220;To hang down loosely and often <strong>attractively</strong>&#8221;</h1>
+				<p>Cambridge Dictionary</p>
+			</section>
+			<section data-background="#ffffff" class="quote">
+				<h1>&#8220;Is the mental state of operation in which a person performing an activity is fully immersed in a
+					feeling of energized focus, <strong>full involvement</strong>, and <strong>enjoyment</strong> in the process of the activity&#8221;</h1>
+				<p>Mihaly Csikszentmihalyi</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>You have 4 weeks.</h2>
+				<ul>
+					<li class="fragment">18 chapters</li>
+					<li class="fragment">&asymp; 550 MB Assets</li>
+					<li class="fragment">Cross browser/Cross Device</li>
+					<li class="fragment">3 Languages</li>
+					<li class="fragment">Most Important: Must perform! (Keep the flow)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Ready... Steady... Go!</h2>
+				<img src="img/typing.gif"/>
+			</section>
+			<section>
+				<h2>Half way we found a problem</h2>
+				<img src='img/we-have-problem.gif'/>
+			</section>
+			<section>
+				<h2>Project wasn't flowing</h2>
+				<img src='img/lost.jpg'/>
+			</section>
+		</section>
+
+		<section>
+			<section class="quote" data-background="#ffffff">
+				<h2>&#8220;Be kind to your future self&#8221;</h2>
+				<p class="reference">Chris Eppstein, Creator of Compass</p>
+			</section>
+			<section class='emphasi' data-background="#00000"><h2>And remember</h2></section>
+			<section class='emphasi' data-background="#00000"><h2>Performance is not a test.<br> Performance is a feature!</h2></section>
+		</section>
+
+
+		<section class="phases">
+			<h2>Work in every phase</h2>
+
+			<div class=" phase">
+				<div class="block network">NETWORK</div>
+				<img src="img/loading.gif"/>
+			</div>
+			<div class=" phase">
+				<div class="block compute">COMPUTE</div>
+				<img src="img/compute.gif"/>
+			</div>
+			<div class=" phase">
+				<div class="block render">RENDER</div>
+				<img src="img/render.gif"/>
+			</div>
+		</section>
+
+		<section>
+			<section>
+				<h2 class="network">NETWORK</h2>
+				<ul>
+					<li class="fragment">Reduce first load</li>
+					<li class="fragment">Design a plan B for low bandwidth</li>
+					<li class="fragment">Lazy loading & on demand</li>
+					<li class="fragment">Batch requests (specially Tracking)</li>
+				</ul>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2 class="compute">COMPUTE</h2>
+				<ul>
+					<li class="fragment">Don't micromanage</li>
+					<li class="fragment">Keep main loop clean</li>
+					<li class="fragment">Use RAF (request animation frame)</li>
+					<li class="fragment">Avoid changing styles in event handlers</li>
+					<li class="fragment">Careful with GC</li>
+
+					<!-- If you are doing for example a parallax web don't change styles inside of the scroll event handler, keep the information and change it inside the RAF,
+						because events are executed prior javascript, and that would force sync-layout. -->
+				</ul>
+			</section>
+			<section>
+				<h3>Keep an eye on sawteeth</h3>
+				<ul style="text-align: center">
+					<img src="img/noloop.png"/>
+					<label	>Without object pool.</label>
+					<img src="img/loop-graph.png"/>
+					<label>With object pool</label>
+				</ul>
+			</section>
+			<section data-background="#ffffff">
+				<img src="img/pool-dia.png"/>
+			</section>
+			<section>
+				<h3>Detect leaks</h3>
+				<img src="img/leak.png"/>
+			</section>
+			<section data-background="#ffffff">
+				<h3>Careful with Closures</h3>
+
+			</section>
+		</section>
+
+		<section data-background="#ffffff" class='quote'>
+			<h2>&#8220;Your DOM becoming pixels on the screen can be one of the most costly parts of your app’s lifecycle.&#8221;</h2>
+			<p class="reference">Paul Lewis</p>
+		</section>
+
+		<section class="render-phase">
+				<section>
+					<h2 class="render">RENDER</h2>
+					<div class="render-steps">
+						<div class="wrapper-step fragment">
+							<div class="step purple style" data-step='style'>Style</div>
+							<ul class="under-box js">
+								<img src="img/jslogo.png"/>
+							</ul>
+						</div>
+						<div class="wrapper-step fragment">
+							<div class="step purple layout" data-step='layout'>Layout</div>
+							<ul class="under-box layout">
+								<li>border-bottom-width</li>
+								<li>font</li>
+								<li>width</li>
+								<li>height</li>
+								<li>top,left,..</li>
+							</ul>
+
+						</div>
+						<div class="wrapper-step fragment">
+							<div class="step green paint" data-step='paint'>Paint</div>
+							<ul class="under-box paint">
+								<li>border-bottom-color</li>
+								<li>background</li>
+								<li>width</li>
+								<li>height</li>
+								<li>color</li>
+							</ul>
+						</div>
+						<div class="wrapper-step fragment">
+							<div class="step green-dark composite" data-step='composite'>Composite</div>
+							<ul class="under-box composite">
+								<li>border</li>
+								<li>font</li>
+								<li>display</li>
+								<li>top,left,..</li>
+							</ul>
+						</div>
+					</div>
+					<p class="fragment" style="top: 100px; position: relative;"><a href="http://www.csstrigers.com" target="_blank">csstrigers.com</a></p>
+
+				</section>
+				<section>
+					<h2 class="render">LAYOUT TRASHING</h2>
+						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							var h1 = element1.clientHeight;           // Read (measures the element)
+							element1.style.height = (h1 * 2) + 'px';  // Write (invalidates current layout)
+							var h2 = element2.clientHeight;           // Read (measure again, so must trigger layout)
+							element2.style.height = (h1 * 2) + 'px';  // Write (invalidates current layout)
+							var h3 = element3.clientHeight;           // Read (measure again, so must trigger layout)
+							element3.style.height = (h3 * 2) + 'px';  // Write (invalidates current layout)
+						</code></pre>
+					<p>Reading and writting the dom multiple times causing reflows</p>
+				</section>
+			<section>
+				<h2 class="render">LAYOUT TRASHING QUICK FIX</h2>
+						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							var h1 = element1.clientHeight;  // Read (measures the element)
+							// Schedule the write operation to be run in the next frame.
+							raf(function() {
+								element1.style.height = (h1 * 2) + 'px';
+							});
+							var h2 = element2.clientHeight;
+							raf(function() {
+								element2.style.height = (h1 * 2) + 'px';
+							});
+							var h3 = element3.clientHeight;
+							raf(function() {
+								element3.style.height = (h1 * 2) + 'px';
+							});
+						</code></pre>
+				<a target="_blank" href="http://jsbin.com/ebicuJu/2/edit?js,output">Example</a>
+			</section>
+			<section>
+				<h2 class="render">THIS IS FLOW</h2>
+				<img class='flipgif' src="img/scrolling.gif"/>
+				<a target="_blank" href="http://engineering.flipboard.com/2015/02/mobile-web/">How Flipboard did it</a>
+			</section>
+			</section>
+			<section>
+				<h2 class="render">RENDER</h2>
+				<ul>
+					<li class="fragment">Careful with layout trashing</li>
+					<li class="fragment">Promote layers: just the ones needed <a href="https://greensock.com/js/speed.html" target="_blank">Example</a></li>
+					<li class="fragment">Composite always better than paint</li>
+				</ul>
+			</section>
+		</section>
+
+
+		<section>
+			<h2>Hey! We have a budget!</h2>
+			<div class="wrapper-budget">
+				<div class="letter-wrapper disabled">
+					<p class="r letter">R</p>
+					<p class="desc">Response: 100ms</p>
+				</div>
+				<div class="letter-wrapper disabled">
+					<p class="a letter">A</p>
+					<p class="desc">Animation: <br> 16ms</p>
+				</div>
+				<div class="letter-wrapper disabled">
+					<p class="i letter">I</p>
+					<p class="desc">Idle: <br> 50ms</p>
+				</div>
+				<div class="letter-wrapper disabled">
+					<p class="l letter">L</p>
+					<p class="desc">Load: <br> 1000ms</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>Takeaway</h2>
+			<ul>
+				<li class="fragment">Avoid premature optimization</li>
+				<li class="fragment">Design, code and measure.</li>
+				<li class="fragment">Analyse project's nature and use it in your advantage.</li>
+				<li class="fragment">Work with the browser</li>
+				<li class="fragment">Use the tools available</li>
+			</ul>
+		</section>
+
+		<section data-background="#000000" class='emphasi'>
+			<h2>CREATE THE HABIT OF MEASURING!</h2>
+		</section>
+
+		<section>
+			<h2>Future of web</h2>
+			<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/Ms2SD1?gui=false&t=10&paused=true" allowfullscreen></iframe>
+		</section>
+
+		<section id="transitions">
+			<h2>Transition Styles</h2>
+
+			<p>
+				You can select from different transitions, like: <br>
+				<a href="?transition=none#/transitions">None</a> -
+				<a href="?transition=fade#/transitions">Fade</a> -
+				<a href="?transition=slide#/transitions">Slide</a> -
+				<a href="?transition=convex#/transitions">Convex</a> -
+				<a href="?transition=concave#/transitions">Concave</a> -
+				<a href="?transition=zoom#/transitions">Zoom</a>
+			</p>
+		</section>
+
+		<section data-background="#ffffff">
+
+		</section>
+
+		<section id="themes">
+			<h2>Themes</h2>
+
+			<p>
+				reveal.js comes with a few themes built in: <br>
+				<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black
+					(default)</a> -
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
+				<br>
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a>
+				-
+				<a href="#"
+				   onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+			</p>
+		</section>
+
+		<section>
+			<section data-background="#dddddd">
+				<h2>Slide Backgrounds</h2>
+
+				<p>
+					Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color
+					formats are supported.
+				</p>
+				<a href="#" class="navigate-down">
+					<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"
+					     alt="Down arrow">
+				</a>
+			</section>
+			<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+				<h2>Image Backgrounds</h2>
+				<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+			</section>
+			<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png"
+			         data-background-repeat="repeat" data-background-size="100px">
+				<h2>Tiled Backgrounds</h2>
+				<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png"
+					data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+			</section>
+			<section
+				data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
+				data-background-color="#000000">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h2>Video Backgrounds</h2>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+				</div>
+			</section>
+			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				<h2>... and GIFs!</h2>
+			</section>
+		</section>
+
+		<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+			<h2>Background Transitions</h2>
+
+			<p>
+				Different background transitions are available via the backgroundTransition option. This one's called
+				"zoom".
+			</p>
+			<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+		</section>
+
+		<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+			<h2>Background Transitions</h2>
+
+			<p>
+				You can override background transitions per-slide.
+			</p>
+			<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+		</section>
+
+		<section>
+			<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+						function linkify( selector ) {
+						if( supports3DTransforms ) {
+
+						var nodes = document.querySelectorAll( selector );
+
+						for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+						var node = nodes[i];
+
+						if( !node.className ) {
+						node.className += ' roll';
+						}
+						}
+						}
+						}
+					</code></pre>
+			<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.
+			</p>
+		</section>
+
+		<section>
+			<h2>Marvelous List</h2>
+			<ul>
+				<li>No order here</li>
+				<li>Or here</li>
+				<li>Or here</li>
+				<li>Or here</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Fantastic Ordered List</h2>
+			<ol>
+				<li>One is smaller than...</li>
+				<li>Two is smaller than...</li>
+				<li>Three!</li>
+			</ol>
+		</section>
+
+		<section>
+			<h2>Tabular Tables</h2>
+			<table>
+				<thead>
+				<tr>
+					<th>Item</th>
+					<th>Value</th>
+					<th>Quantity</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>Apples</td>
+					<td>$1</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Lemonade</td>
+					<td>$2</td>
+					<td>18</td>
+				</tr>
+				<tr>
+					<td>Bread</td>
+					<td>$3</td>
+					<td>2</td>
+				</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Clever Quotes</h2>
+
+			<p>
+				These guys come in two forms, inline: <q
+				cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+				&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+			</p>
+			<blockquote
+				cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+				&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of
+				typewriters would
+				reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+			</blockquote>
+		</section>
+
+		<section>
+			<h2>Intergalactic Interconnections</h2>
+
+			<p>
+				You can link between slides internally,
+				<a href="#/2/3">like this</a>.
+			</p>
+		</section>
+
+		<section>
+			<h2>Speaker View</h2>
+
+			<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a
+				timer, preview of the upcoming slide as well as your speaker notes.</p>
+
+			<p>Press the <em>S</em> key to try it out.</p>
+
+			<aside class="notes">
+				Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open
+				the speaker notes window (hit 's' on your keyboard).
+			</aside>
+		</section>
+
+		<section>
+			<h2>Export to PDF</h2>
+
+			<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>,
+				here's an example:</p>
+			<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0"
+			        marginwidth="0" marginheight="0" scrolling="no"
+			        style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
+		</section>
+
+		<section>
+			<h2>Global State</h2>
+
+			<p>
+				Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+				will be added as a class to the document element when the slide is open. This lets you
+				apply broader style changes, like switching the page background.
+			</p>
+		</section>
+
+		<section data-state="customevent">
+			<h2>State Events</h2>
+
+			<p>
+				Additionally custom events can be triggered on a per slide basis by binding to the
+				<code>data-state</code> name.
+			</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+						Reveal.addEventListener( 'customevent', function() {
+						console.log( '"customevent" has fired' );
+						} );
+					</code></pre>
+		</section>
+
+		<section>
+			<h2>Take a Moment</h2>
+
+			<p>
+				Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want
+				to take distracting slides off the screen.
+			</p>
+		</section>
+
+		<section>
+			<h2>Much more</h2>
+			<ul>
+				<li>Right-to-left support</li>
+				<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+				<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+				<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+				<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+			</ul>
+		</section>
+
+		<section style="text-align: left;">
+			<h1>THE END</h1>
+
+			<p>
+				- <a href="http://slides.com">Try the online editor</a> <br>
+				- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+			</p>
+		</section>
+
+	</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="main.bundle.js"></script>
+</body>
+</html>
